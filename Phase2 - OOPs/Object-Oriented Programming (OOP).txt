@@ -1,0 +1,217 @@
+Phase 2 — Object-Oriented Programming (OOP)
+
+Classes & Objects
+Inheritance, Polymorphism, Encapsulation
+Interfaces & Abstract classes
+
+# Java Lesson 2: Methods & Functions 🔧
+
+Methods let you **organize your code** into reusable blocks. Instead of writing the same code again and again, you write it once in a method and call it anywhere!
+
+---
+
+## Step 1 — What is a Method?
+
+```java
+public class Lesson2 {
+
+    // This is a METHOD
+    static void sayHello() {
+        System.out.println("Hello! Welcome to Java!");
+    }
+
+    public static void main(String[] args) {
+        sayHello();  // Calling the method
+        sayHello();  // Call it again — reuse!
+        sayHello();
+    }
+}
+```
+
+### 🔑 Method Structure:
+```
+static returnType methodName(parameters) {
+    // code
+}
+```
+
+| Part | Meaning |
+|---|---|
+| `static` | Belongs to the class (we'll explain later in OOP) |
+| `void` | Method returns nothing |
+| `methodName` | You choose the name |
+| `()` | Parameters go inside here |
+
+---
+
+## Step 2 — Methods with Parameters (Inputs)
+
+Pass data **into** a method:
+
+```java
+public class Lesson2 {
+
+    // Method that takes a name as input
+    static void greet(String name) {
+        System.out.println("Hello, " + name + "!");
+    }
+
+    // Method with multiple parameters
+    static void add(int a, int b) {
+        int sum = a + b;
+        System.out.println(a + " + " + b + " = " + sum);
+    }
+
+    public static void main(String[] args) {
+        greet("Ravi");       // → Hello, Ravi!
+        greet("Priya");      // → Hello, Priya!
+
+        add(5, 3);           // → 5 + 3 = 8
+        add(100, 200);       // → 100 + 200 = 300
+    }
+}
+```
+
+---
+
+## Step 3 — Methods that Return Values
+
+Instead of `void`, use a **return type** to send a value back:
+
+```java
+public class Lesson2 {
+
+    // Returns the sum of two numbers
+    static int add(int a, int b) {
+        return a + b;   // ← sends the result back
+    }
+
+    // Returns the bigger number
+    static int max(int a, int b) {
+        if (a > b) {
+            return a;
+        } else {
+            return b;
+        }
+    }
+
+    // Returns a greeting message
+    static String buildGreeting(String name) {
+        return "Hello, " + name + "! Welcome!";
+    }
+
+    public static void main(String[] args) {
+        int result = add(10, 20);
+        System.out.println("Sum: " + result);         // → Sum: 30
+
+        int biggest = max(45, 78);
+        System.out.println("Bigger: " + biggest);     // → Bigger: 78
+
+        String msg = buildGreeting("Ravi");
+        System.out.println(msg);                      // → Hello, Ravi! Welcome!
+    }
+}
+```
+
+---
+
+## Step 4 — Method Overloading
+
+Same method name, **different parameters** — Java figures out which one to call!
+
+```java
+public class Lesson2 {
+
+    static int multiply(int a, int b) {
+        return a * b;
+    }
+
+    // Same name, but 3 parameters!
+    static int multiply(int a, int b, int c) {
+        return a * b * c;
+    }
+
+    // Same name, but double type!
+    static double multiply(double a, double b) {
+        return a * b;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(multiply(2, 3));         // → 6
+        System.out.println(multiply(2, 3, 4));      // → 24
+        System.out.println(multiply(2.5, 3.0));     // → 7.5
+    }
+}
+```
+
+> 💡 This is called **Overloading** — very useful in real projects!
+
+---
+
+## Step 5 — Putting It All Together
+
+A mini program using multiple methods:
+
+```java
+import java.util.Scanner;
+
+public class Calculator {
+
+    static int add(int a, int b)      { return a + b; }
+    static int subtract(int a, int b) { return a - b; }
+    static int multiply(int a, int b) { return a * b; }
+    static double divide(int a, int b) {
+        if (b == 0) {
+            System.out.println("Error! Cannot divide by zero.");
+            return 0;
+        }
+        return (double) a / b;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int a = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int b = sc.nextInt();
+
+        System.out.println("Add:      " + add(a, b));
+        System.out.println("Subtract: " + subtract(a, b));
+        System.out.println("Multiply: " + multiply(a, b));
+        System.out.println("Divide:   " + divide(a, b));
+    }
+}
+```
+
+---
+
+## 🏋️ Practice Exercises
+
+1. **Easy** — Write a method `isEven(int n)` that returns `true` if a number is even, `false` if odd. Test it with 5 numbers.
+
+2. **Medium** — Write a method `factorial(int n)` that returns the factorial of a number.
+   - Hint: `5! = 5 × 4 × 3 × 2 × 1 = 120`
+
+3. **Challenge** — Build a **grade calculator**:
+   - Method `getGrade(int marks)` returns:
+     - `"A"` for 90+
+     - `"B"` for 75+
+     - `"C"` for 60+
+     - `"F"` for below 60
+   - Ask user for 3 subject marks, call the method for each, print the grades
+
+---
+
+## ✅ Lesson 2 Complete!
+
+You now know:
+- ✔ How to create and call methods
+- ✔ Methods with parameters
+- ✔ Methods with return values
+- ✔ Method overloading
+
+**Next up → Lesson 3: Object-Oriented Programming (OOP)** — the most important concept in Java! 🚀
+
+Type **Next** when you're ready, or ask me any questions about this lesson!
