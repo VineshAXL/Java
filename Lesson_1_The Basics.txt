@@ -1,0 +1,163 @@
+✅ Let's Start Right Now — Your First Java Program
+javapublic class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+Here's what each part means:
+
+public class HelloWorld — Every Java program lives inside a class
+public static void main(String[] args) — This is the entry point where the program starts running
+System.out.println(...) — This prints text to the screen
+
+
+🛠️ Getting Started (Setup)
+
+Download JDK 21 (latest LTS) from adoptium.net
+Download IntelliJ IDEA Community (free) from jetbrains.com
+Create a new Java project and paste the code above!
+
+🗺️ Java Learning Roadmap (Backend Focus)
+Phase 1 — Java Fundamentals
+
+Setup — Install JDK & an IDE (IntelliJ IDEA is the best for Java)
+Basics — Variables, data types, operators
+Control flow — if/else, loops (for, while)
+Methods — Writing and calling functions
+Arrays & Strings
+
+
+Java Step-by-Step — Lesson 1: The Basics 🚀
+Let's start from zero and build up gradually. Each step has explanation + code + a mini challenge.
+
+Step 1 — Variables & Data Types
+In Java, every variable needs a type. Think of a variable as a box that stores data.
+javapublic class Lesson1 {
+    public static void main(String[] args) {
+
+        // Integer (whole numbers)
+        int age = 20;
+
+        // Decimal numbers
+        double price = 99.99;
+
+        // True or False
+        boolean isStudent = true;
+
+        // Single character
+        char grade = 'A';
+
+        // Text (called String in Java)
+        String name = "Ravi";
+
+        // Print them
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Price: " + price);
+        System.out.println("Is Student: " + isStudent);
+        System.out.println("Grade: " + grade);
+    }
+}
+Output:
+Name: Ravi
+Age: 20
+Price: 99.99
+Is Student: true
+Grade: A
+🔑 Key Rules
+
+Every statement ends with a semicolon ;
+Java is case-sensitive — Name and name are different
+String starts with a capital S (it's special!)
+Text values use "double quotes", characters use 'single quotes'
+
+
+Step 2 — Doing Math (Operators)
+javapublic class Lesson2 {
+    public static void main(String[] args) {
+
+        int a = 10;
+        int b = 3;
+
+        System.out.println(a + b);   // Addition → 13
+        System.out.println(a - b);   // Subtraction → 7
+        System.out.println(a * b);   // Multiplication → 30
+        System.out.println(a / b);   // Division → 3 (not 3.33!)
+        System.out.println(a % b);   // Remainder → 1
+    }
+}
+
+⚠️ Important: int / int gives a whole number. To get decimals, use double:
+javadouble result = 10.0 / 3;  // → 3.333...
+
+
+Step 3 — Taking User Input
+javaimport java.util.Scanner;   // ← You need this to take input
+
+public class Lesson3 {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
+
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
+
+        System.out.println("Hello, " + name + "! You are " + age + " years old.");
+    }
+}
+Scanner cheat sheet:
+MethodUse it fornextLine()Reading text (String)nextInt()Reading whole numbersnextDouble()Reading decimal numbers
+
+Step 4 — If / Else (Making Decisions)
+javaimport java.util.Scanner;
+
+public class Lesson4 {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
+
+        if (age >= 18) {
+            System.out.println("You are an adult.");
+        } else if (age >= 13) {
+            System.out.println("You are a teenager.");
+        } else {
+            System.out.println("You are a child.");
+        }
+    }
+}
+
+Step 5 — Loops (Repeating Things)
+For Loop — when you know how many times
+javafor (int i = 1; i <= 5; i++) {
+    System.out.println("Count: " + i);
+}
+// Output: Count: 1, Count: 2 ... Count: 5
+While Loop — when you don't know how many times
+javaint i = 1;
+while (i <= 5) {
+    System.out.println("Count: " + i);
+    i++;
+}
+
+🏋️ Practice Exercises
+Try these on your own in IntelliJ:
+
+Easy — Create variables for your name, age, and city. Print them in a sentence like: "My name is X, I am Y years old, from Z."
+Medium — Ask the user to enter two numbers, then print their sum, difference, and product.
+Challenge — Ask the user for a number. Use a loop to print its multiplication table (1×N to 10×N).
+
+
+✅ Lesson 1 Complete!
+You now know:
+
+✔ Variables & Data Types
+✔ Math operators
+✔ User input with Scanner
+✔ if/else conditions
+✔ for and while loops
